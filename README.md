@@ -12,18 +12,18 @@ Create queuing JavaScript Promise objects
 var PromiseQueue = require('promise-queue')
 var {
     addPromise,
-    getLastPromise
+    getLastedPromise
 } = new PromiseQueue({
     init: 'init value'
 })
-getLastPromise()
+getLastedPromise()
     .onfulfill(first => console.log({first}))
 [0, 1, 2, 3, 5, 6, 7, 8, 9]
     .forEach(current => addPromise((prev, resolve) => {
         console.log({prev, current})
         resolve(current)
     }))
-getLastPromise()
+getLastedPromise()
     .onfulfill(last => console.log({last}))
 ```
 
