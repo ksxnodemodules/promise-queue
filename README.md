@@ -1,5 +1,6 @@
 
 # promise-queue
+Create queuing JavaScript Promise objects
 
 ## Requirements
 
