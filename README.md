@@ -9,22 +9,22 @@ Create queuing JavaScript Promise objects
 ## Example
 
 ```javascript
-var PromiseQueue = require('promise-queue')
+var PromiseQueue = require('promise-queue');
 var {
     addPromise,
     getLastedPromise
 } = new PromiseQueue({
     init: 'init value'
-})
+});
 getLastedPromise()
-    .onfulfill(first => console.log({first}))
+    .onfulfill(first => console.log({first}));
 [0, 1, 2, 3, 5, 6, 7, 8, 9]
     .forEach(current => addPromise((prev, resolve) => {
         console.log({prev, current})
         resolve(current)
-    }))
+    }));
 getLastedPromise()
-    .onfulfill(last => console.log({last}))
+    .onfulfill(last => console.log({last}));
 ```
 
 Result:
